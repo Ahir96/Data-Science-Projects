@@ -242,7 +242,7 @@ byYear['n_injured'].plot()
 # In[170]:
 
 
-monthKill = df.groupby(by=['state','Month']).count()['Year'].unstack()
+monthKill = df.groupby(by=['state','Month']).count()['n_killed'].unstack()
 monthKill.head()
 
 
@@ -253,7 +253,9 @@ plt.figure(figsize=(12,20))
 sns.heatmap(monthKill,cmap='viridis')
 
 
-# In[ ]:
+# In[184]:
+
+sns.clustermap(monthKill,cmap='viridis')
 
 
 
